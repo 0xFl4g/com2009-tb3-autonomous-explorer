@@ -1,0 +1,3 @@
+<launch>
+  <node name="task3_node" pkg="com2009_tb3_explorer" type="task3_node.py" output="screen"/>
+</launch>

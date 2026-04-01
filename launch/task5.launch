@@ -1,0 +1,18 @@
+<launch>
+  <!-- Define the argument with default value -->
+  <arg name="mode" default="0"/>
+  <arg name="target_colour"/>
+
+  <!-- Pass the image topic and target_colour to the param -->
+  <param name="target_colour" value="$(arg target_colour)"/>
+  <param name="mode" value="$(arg mode)"/>
+
+  <node name="task5_node" pkg="com2009_tb3_explorer" type="task5_node.py" output="screen"/>
+  <node name="camera_saver" pkg="com2009_tb3_explorer" type="camera_saver.py" output="screen"/>
+
+  <!-- Launch SLAM with silenced logs -->
+  <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch">
+    <env name="ROSCONSOLE_CONFIG_FILE" value="src/com2009_tb3_explorer/src/rosconsole.config"/>
+  </include>
+
+</launch>
