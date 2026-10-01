@@ -116,7 +116,6 @@ class WallFollow:
         min_left = min(left_ranges)
         front_right_ranges = self.laser_data.ranges[275:350]
         max_front_right = max(front_right_ranges[15:-55])
-        min_front_right = min(front_right_ranges)
         avg_front_right = sum(front_right_ranges[15:-20]) / len(front_right_ranges[15:-20])
        
         if (min(wide_front) < 0.234) or (min(mid_front) < 0.21) or (min(front_ranges) < 0.2):

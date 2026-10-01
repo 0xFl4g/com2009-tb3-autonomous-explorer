@@ -111,7 +111,6 @@ class ColourSearch:
         # Colour mask
         lower, upper = colors[self.target_colour]
         mask = cv2.inRange(hsv_img, lower, upper)
-        res = cv2.bitwise_and(crop_img, crop_img, mask=mask)
 
         # Image moments to find centroid
         m = cv2.moments(mask)
